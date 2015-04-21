@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>I'm a electrical sheep!</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script type='text/javascript'>
+(function() {
+    var prevY = -1;
+    document.onmousemove = handleMouseMove;
+
+    function handleMouseMove(event) {
+        var dot, eventDoc, doc, body, pageX, pageY;
+
+        event = event || window.event; // IE-ism
+
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX = event.clientX +
+              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+              (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+
+
+        }
+        
+        console.log('--> ' + event.pageY);
+        if (prevY == -1) {
+            prevY = event.pageY;
+        } else {
+            if (event.pageY < 50 && event.pageY < prevY) {
+                console.log('WTF ' + event.pageY);
+                $( "#sheep" ).slideDown( "slow", function() {
+                    // Animation complete.
+                });
+            }
+
+            prevY = event.pageY;
+        }
+    }
+
+})();
+</script>
+
+</head>
+<body>
+<div id="sheep" style="display: none; background-color: #ff0000; height: 100px"></div>
+
+I'm an electrical sheep! meh... meh... meh...
+</body>
+</html>
