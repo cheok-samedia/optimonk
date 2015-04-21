@@ -393,24 +393,20 @@ margin-top: 10px;
 .msisdn-submit-button{}
 </style>    <title>Whatsapp Emoticons</title>
    <!-- ETraffic code -->
-<script>
-    $(function() {
-        var url     = 'http://analytics.mozzi.biz/v1/etraffic/bupper/?partner_link=http%3A%2F%2Faff.ringtonepartner.com%2Fgeo%2Fpreset%2F1881%2F15&partner_id=54bc78000f67325a67c48cc3&partner=Ringtone+Partner&campaign_id=54b8cf0a0f6732645169f56a&campaign=MY-WAP&country=my&product_type=smart';
-        var message = "Anda pasti anda mahu meninggalkan laman ini?";
 
-        $('a').on('click', function() { jQuery(window).unbind("beforeunload"); });
-        $('form').on('submit', function() { jQuery(window).unbind("beforeunload"); });
-
-        $(window).on("beforeunload", function() {
-            jQuery(window).unbind("beforeunload");
-            setTimeout(function() {
-                window.location = url;
-            }, 0);
-
-            return message;
-        });
-    });
+<script type="text/javascript">
+    (function(d, a) {
+        var h = d.getElementsByTagName("head")[0], p = d.location.protocol, s;
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.charset = "utf-8";
+        s.async = true;
+        s.defer = true;
+        s.src = p + "//front.optimonk.com/public/" + a + "/js/preload.js";
+        h.appendChild(s);
+    })(document, '4204');
 </script>
+
 <!-- End of ETraffic code -->
 <!-- Google Analytics -->
 <script>
